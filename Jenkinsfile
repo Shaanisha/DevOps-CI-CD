@@ -21,7 +21,9 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u shaani-p ${dockerhubpwd}'
+                   sh 'docker login -u shaani -p ${dockerhubpwd}'
+                 //  sh 'docker login -u your_username -p your_password docker.io
+
 
 }
                    sh 'docker push shaani/devops-integration'
